@@ -59,13 +59,7 @@
       self.webView.opaque = NO;
       self.webView.backgroundColor = [UIColor clearColor];
         
-      for (UIView *i in self.viewController.view.subviews) {
-          NSString *nameOfClass = NSStringFromClass([i class]);
-          NSLog(@"Class of subview is %@",nameOfClass);
-          if ([nameOfClass isEqualToString:@"WKScrollView"]) {
-              self.webView = i;
-          }
-      }
+    
 
       [self.viewController.view addSubview:self.cameraRenderController.view];
       [self.viewController.view bringSubviewToFront:self.webView];
